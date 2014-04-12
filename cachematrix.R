@@ -14,13 +14,13 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         
-        ## Initialize inverse matrix with all elements 0 of same dimension as input matrix
-        inv <- matrix(0, nrow(x), ncol(x))
+        ## Initialize inverse matrix as NULL
+        inv <- NULL
         
         ## Define set function to set the value of the matrix
         set <- function(y) {
                 x <<- y
-                inv <- matrix(0, nrow(x), ncol(x))
+                inv <<- NULL
         }
         
         ## Define get function to get the value of the matrix
@@ -54,7 +54,7 @@ cacheSolve <- function(x, ...) {
         
         ## check if the inverse has alreay been calculated. If yes, then return the value of
         ## inverse from cache
-        if(sum(inv)) {
+        if(!is.null(inv)) {
                 message("getting cached data")
                 return(inv)
         }
