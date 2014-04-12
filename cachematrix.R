@@ -6,6 +6,7 @@
 ## makeCacheMatrix above. If the inverse has already been calculated (and the matrix 
 ## has not changed), then the cachesolve should retrieve the inverse from the cache.
 
+
 ## makeCacheMatrix creates a special "vector", which is really a list containing a function to
 ## 1. set the value of the matrix
 ## 2. get the value of the matrix
@@ -41,6 +42,7 @@ makeCacheMatrix <- function(x = matrix()) {
         ## Return a list containing all 4 functions defined above
         list (set = set, get = get, setinv = setinv, getinv = getinv)
 }
+
 
 ## The following function calculates the inverse of the special "vector" created with the above 
 ## function. However, it first checks to see if the inverse has already been calculated. 
